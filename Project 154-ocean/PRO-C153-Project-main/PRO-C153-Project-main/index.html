@@ -12,7 +12,7 @@
     <a-scene >
       <!---Assets-->
       <a-a-assets>
-        <a-asset-item id="island" src="assets/island/scene.gltf"></a-asset-item>
+        <a-asset-item id="island" src="assets/island2/scene.gltf"></a-asset-item>
 
         <a-asset-item
           id="treasure"
@@ -43,8 +43,8 @@
         <!--Island-->
         <a-entity
           gltf-model="#island"
-          scale="1 1 1"
-          position="0 -15 -40"
+          scale="10 10 10"
+          position="0 0 0"
         ></a-entity>
 
         <!--Treasure-->
@@ -73,7 +73,25 @@
         <a-entity
           gltf-model="#fish"
           scale="0.5 0.5 0.5"
-          position="0 -10 0"
+          position="10 5 0"
+          rotation="0 90 0"
+        ></a-entity>
+        <a-entity
+          gltf-model="#fish"
+          scale="0.5 0.5 0.5"
+          position="-10 5 0"
+          rotation="0 90 0"
+        ></a-entity>
+        <a-entity
+        gltf-model="#fish"
+        scale="0.5 0.5 0.5"
+        position="20 5 0"
+        rotation="0 90 0"
+      ></a-entity>
+      <a-entity
+          gltf-model="#fish"
+          scale="0.5 0.5 0.5"
+          position="-20 5 0"
           rotation="0 90 0"
         ></a-entity>
       </a-sky>
