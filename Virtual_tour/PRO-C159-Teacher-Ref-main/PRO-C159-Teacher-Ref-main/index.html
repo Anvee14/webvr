@@ -9,7 +9,7 @@
 
   <script src="js/CursorEvents.js"></script>
   <script src="js/Tour.js"></script>
-
+  <script src="js/sideView.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,10 @@
 
     <!-- Places Container -->
     <a-entity id="places-container" cursor-listener tour></a-entity>
+    <!--Side view-->
+    <a-entity id = "side-view-container" place-side-view cursor-listener>
 
+    </a-entity>
     <!-- CAMERA -->
     <a-camera id="camera" wasd-controls="enabled:false;" zoom>
       <!-- App Title -->

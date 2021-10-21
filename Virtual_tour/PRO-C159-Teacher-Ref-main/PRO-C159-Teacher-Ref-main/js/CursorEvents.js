@@ -14,6 +14,7 @@ AFRAME.registerComponent("cursor-listener", {
       const placesContainer = document.querySelector("#places-container");
       const { state } = placesContainer.getAttribute("tour");
       img = `place-${Math.floor((Math.random() * 4) + 1)}.jpg`
+      console.log(img)
       if (state === "places-list") {
         const id = this.el.getAttribute("id");
         const placesId = [

@@ -50,7 +50,7 @@ AFRAME.registerComponent("tour", {
     const skyEl = document.querySelector("#main-container");
 
     skyEl.setAttribute("material", {
-      src: `./assets/360_images/${selectedCard}/place-1.jpg`,
+      src: `./assets/360_images/${selectedCard}/${img}`,
       color: "white"
     });
   },
