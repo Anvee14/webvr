@@ -1,0 +1,2 @@
+to get the direction of the camera element we can use the .getWorldDirection(vectorVariable) method defined in Three.js.
+camera.getWorldDirection(direction), will set the value of the vector given by the method in the direction variable.

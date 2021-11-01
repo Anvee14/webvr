@@ -6,6 +6,7 @@ AFRAME.registerComponent("cursor-listener", {
     this.handleClickEvents();
     this.handleMouseEnterEvents();
     this.handleMouseLeaveEvents();
+    
   },
   handleClickEvents: function() {
     //  Click Events
@@ -28,9 +29,29 @@ AFRAME.registerComponent("cursor-listener", {
           });
         }
       }
-      
+      if(state=="view"){
+        this.handleViewState()
+      }
+      if(state=="change-view"){
+        this.handleViewState()
+      }
     });
   },
+  handleViewState: function() { 
+    const el = this.el; 
+    const id = el.getAttribute("id"); 
+    const placesContainer = document.querySelector("#places-container"); 
+    const { selectedItemId } = placesContainer.getAttribute("cursor-listener"); 
+    //Keeping all the images as id of the images with .jpg extension 
+    const sideViewPlacesId = ["place-1", "place-2", "place-3", "place-4"]; 
+    if (sideViewPlacesId.includes(id)) { 
+      placesContainer.setAttribute("tour", { state: "change-view" }
+      ); 
+      const skyEl = document.querySelector("#main-container");
+       //Set the 360 degree image to the sky element. 
+       skyEl.setAttribute("material", { src: `./assets/360_images/${selectedItemId}/${id}.jpg`, color: "#fff" }); } 
+      },
+
   handleMouseEnterEvents: function() {
     // Mouse Center Events
     this.el.addEventListener("mouseenter", () => {
