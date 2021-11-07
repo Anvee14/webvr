@@ -4,7 +4,7 @@ AFRAME.registerComponent("coins", {
       const id = `coin${i}`;
 
       const posX = Math.random() * 30 + (-10);
-      const posY = 7//Math.random() * 20 + (-1);       
+      const posY = 15//Math.random() * 20 + (-1);       
       const posZ = Math.random() * 10 + (-4);
 
       const position = { x: posX, y: posY, z: posZ };
@@ -22,7 +22,7 @@ AFRAME.registerComponent("coins", {
     coin.setAttribute("gltf-model", "./assets/coins/roman_coin/scene.gltf");
     coin.setAttribute("animation", {
       property: "rotation",
-      to: "0 0 0",
+      to: "150 0 0",
       loop: "true",
       dur: 1000,
     });
