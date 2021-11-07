@@ -11,11 +11,13 @@ AFRAME.registerComponent("game-play", {
       const element = document.querySelector(elementId);
       element.addEventListener("collide", e => {
         if (elementId.includes("#coin")) {          
-          console.log("coin collision");
+          console.log(elementId + 'collision');
           element.setAttribute('visible',false)
         }
         else if(elementId.includes("#fish")){
           console.log("fish collision");
+          element.setAttribute('visible',false)
+
         }         
       });
     }
