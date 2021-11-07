@@ -12,15 +12,16 @@ AFRAME.registerComponent("coins", {
     }
   },
   createCoins: function (id, position) {
-    const coinEntity = document.querySelector("#coin");
-  //  const terrain1 = document.querySelector("#terrain")
-    var coin = document.createElement("a-entity");
- //   scale = [0.1, 0.1, 0.1]
-    coin.setAttribute("id", id);
-    coin.setAttribute("position", position);
-    //  coinEl.setAttribute("scale",scale)
-    coin.setAttribute("gltf-model", "./assets/coins/roman_coin/scene.gltf");
-    coin.setAttribute("animation", {
+    const treasureEntity = document.querySelector("#Tcoins");
+    var coinEl = document.createElement("a-entity");
+
+    coinEl.setAttribute("id", id);
+    coinEl.setAttribute("position", position);
+    coinEl.setAttribute("material", "color", "#ff9100");
+
+    coinEl.setAttribute("gltf-model", "./assets/coins/roman_coin/scene.gltf");
+
+    coinEl.setAttribute("animation", {
       property: "rotation",
       to: "150 0 0",
       loop: "true",
@@ -28,10 +29,17 @@ AFRAME.registerComponent("coins", {
     });
 
     //set the static body attribute of physics system
-    coin.setAttribute("static-body", {
+    coinEl.setAttribute("static-body", {
       shape: "sphere",
-    })
-   // terrain1.appendChild(coin)
-    coinEntity.appendChild(coin);
+      sphereRadius: 2
+    });
+
+    //set the game play attribute
+    coinEl.setAttribute("game-play", {
+      elementId: `#${id}`,
+    });
+
+
+    treasureEntity.appendChild(coinEl);
   },
 });
