@@ -16,3 +16,14 @@ The direction tells in which direction the vector will be starting from the orig
 The magnitude value tells how long the length will be starting from one point to another.
 
 The length of 1 unit is the standard length of the vectors which is known as the unit vector.
+
+a logarithmic depth buffer provides more accuracy for objects near the camera.
+
+NFT stands for natural feature tracking. This is a technology which helps to create image trackers.
+
+● src: the file path to video; 
+● preload: whether to preload the video content before rendering the scene;
+● loop: whether to play the video again and again; 
+● playsinline and webkit-playsinline: to play the video right where it is and avoid video to play in full screen mode; and 
+● crossorigin: sets the Cross-Origin Resource Sharing permission to share the information on the web browser. The crossorigin attribute is valid on the <audio>, <img>, <link>, <script>, and <video> elements.
+

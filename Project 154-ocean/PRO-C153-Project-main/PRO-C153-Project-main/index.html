@@ -4,7 +4,8 @@
 <head>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
 
   <!-- IMPORTED COMPONENTS -->
   <!--<script src="./js/Rotation.js"></script>-->
@@ -31,9 +32,8 @@
       theta-length="180" side="double">
       <!--animation="property: rotation; to: 0 1000 0; easing:linear; loop: true; dur: 150000">-->
       <!------------------------------------GLTF Models------------------------------------------>
-
       <!--Island-->
-      <a-entity id="#terrain" gltf-model="#island" scale="10 10 10" position="0 0 0" ></a-entity>
+      <a-entity id="#terrain" gltf-model="#island" scale="10 10 10" position="0 0 0"></a-entity>
 
       <!--Fish Entity-->
       <a-entity position="0 0 0" id="fishModels" fish> </a-entity>
@@ -56,28 +56,47 @@
 
     </a-sky>
 
-    
+
 
     <!--<a-cylinder color="#00009e" radius="100" opacity="0.2"></a-cylinder>-->
 
     <!-- CAMERA -->
     <a-entity id="camera" camera position="0 15 0" wasd-controls look-controls="pointerLockEnabled: false">
       <!--Scuba Driver-->
-      <a-entity id ="#scubaDiver"gltf-model="#scuba_Diver" scale="0.05 0.05 0.05" position="2 -3 -2" rotation="0 90 -20"
-        diver-rotation-reader 
-        body="type: dynamic; mass: 0; shape: none"
-        shape="shape: cylinder;
+      <a-entity id="#scubaDiver" gltf-model="#scuba_Diver" scale="0.05 0.05 0.05" position="2 -3 -2" rotation="0 90 -20"
+        diver-rotation-reader body="type: dynamic; mass: 0; shape: none" shape="shape: cylinder;
           height: 100;
           radiusTop: 20;
           radiusBottom: 20;
-          offset:50 100 -50"
-          >
-      <!--Bubble-->
+          offset:50 100 -50">
+        <!--Bubble-->
         <a-sphere id="bubble1" position="52.9829 119.97737 -49.38121" radius="1" color="#b2ebf2"
           animation="property: position; to: 52.9829 300 -49.38121;easing:linear; loop: true; dur: 2000"></a-sphere>
       </a-entity>
-
     </a-entity>
+
+    <a-entity id="header" position="1 5 0">
+      <!-- Title -->
+      <a-entity position="-28.5 21.5 0"
+        text="font: exo2bold; align: center; width: 45; color: black; value:VR Scuba Dive"></a-entity>
+
+      <a-entity id="header" position="1 -4 0 ">
+
+        <a-entity position="-26.5 21.5 0" text="font:exo2bold;align:center;width:50;color:black;value:VIRTUAL-FLIGHT">
+        </a-entity>
+
+        <a-entity position="-23.5 19.3 0">
+
+          <a-entity id="timer" position="-5 0.3 0"
+            text="font: exo2bold; align: center; width: 30; color: white; value: 00:00">
+          </a-entity>
+
+          <a-entity position="-5 0.07 0" text="font: aileronsemibold; width: 12; color: black; value: TIME\nREMAINING">
+          </a-entity>
+
+        </a-entity>
+      </a-entity>
+
   </a-scene>
 </body>
 
