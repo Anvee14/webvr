@@ -71,7 +71,7 @@ AFRAME.registerComponent("cursor-listener", {
         selectedItemId: id
       });
       this.el.setAttribute("material", {
-        color:"#D76B30",
+        color:"black",
         opacity: 1
       });
     }
