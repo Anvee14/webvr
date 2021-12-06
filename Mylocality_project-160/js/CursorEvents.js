@@ -86,7 +86,7 @@ AFRAME.registerComponent("cursor-listener", {
             const id = el.getAttribute("id");
             if (id == selectedItemId) {
               el.setAttribute("material", {
-                color: "#0077CC",
+                color: "#black",
                 opacity: 1
               });
             }
