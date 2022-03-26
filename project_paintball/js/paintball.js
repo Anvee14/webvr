@@ -1,16 +1,25 @@
-AFRAME.registerComponent("bowling-balls", {
+AFRAME.registerComponent("paint-ball", {
   init: function () {
     this.throwBall();
   },
   throwBall: function () {
     window.addEventListener("keydown", (e) => {
-      if (e.key === "z") {
+      if (e.key == "z") {
         var ball = document.createElement("a-entity");
-
-        ball.setAttribute("gltf-model", "./models/bowling_ball/scene.gltf");
+        ball.setAttribute("geometry", {
+          primitive: "sphere",
+          radius: "0.1",
+        })
+        ball.setAttribute("material", "color", "white")
+        var cam = document.querySelector("#camera")
+        pos = cam.getAttribute("position")
+        ball.setAttribute('static-body', {
+          shape: "sphere",
+          mass: "0"
+        })
         ball.setAttribute("scale", { x: 3, y: 3, z: 3 });
         var cam = document.querySelector("#camera");
-        ball.setAttribute('static-body', {
+        ball.setAttribute('dynamic-body', {
 
         })
         pos = cam.getAttribute("position");
@@ -27,21 +36,25 @@ AFRAME.registerComponent("bowling-balls", {
         camera.getWorldDirection(direction);
 
         //set the velocity and it's direction
-        ball.setAttribute("velocity", direction.multiplyScalar(-10));
+        ball.setAttribute("velocity", direction.multiplyScalar(-20));
 
         var scene = document.querySelector("#scene");
-        ball.addEventListener("collide", this.removeBullet)
+        ball.addEventListener("collide", this.removeBall)
 
         scene.appendChild(ball);
       }
     });
   },
-  removeBullet: function (e) {
-    console.log(e.detail.target.el)
-    console.log(e.detail.body.el)
+  removeBall: function (e) {
     var eltar = e.detail.target.el;
     var elhit = e.detail.body.el;
-    if (elhit.id.includes("pin")) {
+    console.log(e.detail.target.el)
+    console.log(e.detail.body.el)
+   
+
+    eltar.setAttribute("velocity",  )
+
+    /*if (elhit.id.includes("pin")) {
       elhit.setAttribute("material", {
         opacity: 1,
         transparent: true
@@ -53,8 +66,6 @@ AFRAME.registerComponent("bowling-balls", {
     var worldPoint = new CANNON.Vec3().copy(elhit.getAttribute("position"));
     elhit.body.applyImpulse(impulse, worldPoint);
     var scene = document.querySelector("#scene");
-    scene.remove(eltar)
+    scene.remove(eltar)*/
   }
 })
-
-
