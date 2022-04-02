@@ -20,18 +20,19 @@
         integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
         crossorigin="anonymous"></script>
 
-    <!-- Mapbox -->
+    <!-- Mapbox API-->
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
 
 </head>
 
 <body>
-    <!-- Mapbox Direction Plugin-->
+
+    <!-- Mapbox Geocoder -->
     <script
-        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet"
-        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
         type="text/css">
 
     <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
@@ -42,14 +43,19 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 text-center p-5">
-                <h1>AR NAVIGATION</h1>
+                <h1>MONUMENTS</h1>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12 text-center">
                 <div id="map"></div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12 text-center p-5">
-                <button id="navigate-button">Navigate</button>
-            </div>
+        </div>
+        <div>
+            <img id="goi" class="image-marker" src="./images/goi.jpg">
+            <img id="qm" class="image-marker" src="./images/qm.jpg">
+            
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center p-5">
+            <button id="navigate-button">Show Me The Weather!</button>
         </div>
     </div>
 
